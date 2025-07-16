@@ -40,7 +40,6 @@ public class FileAnalyzer {
             }
         }
 
-        // (Opsiyonel) Konsola sonucu yazdır
         printResults();
     }
 
