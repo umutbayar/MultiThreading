@@ -1,3 +1,5 @@
+package analyzer;
+
 public class Utils {
     // Nanosecond to second dönüşümü
     public static double nanoToSeconds(long nanoTime) {
@@ -10,12 +12,12 @@ public class Utils {
     }
 
     // Sonuçların formatlı çıktısını ekrana yazdır (Hakan’ın FileStats’ını kullanarak)
-    public static void printSummary() {
+    public static void printSummary(FileStatsManager manager) {
         System.out.println("\n=== Dosya Analizi Sonuçları ===");
 
-        for (String fileName : FileStatsManager.getAllFileNames()) {
-            FileStats stats = FileStatsManager.getStats(fileName);
-            System.out.println(stats.format());
+        for (String fileName : manager.getAllFileNames()) {
+            FileStats stats = manager.getStats(fileName);
+            System.out.println(fileName + " - " + stats.getLineCount() + " satır / " + stats.getCharCount() + " karakter");
         }
 
         System.out.println("===============================");
