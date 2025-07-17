@@ -40,6 +40,8 @@ Proje kapsamında, `input/` klasöründeki `.txt` dosyaları ayrı iş parçacı
 
 
 
+
+
 ## ⚙️ Proje Yapısı
 
 ```bash
@@ -61,6 +63,28 @@ Proje kapsamında, `input/` klasöründeki `.txt` dosyaları ayrı iş parçacı
 
 📄 README.md
 📄 .gitignore
+````
+
+## Örnek Çıktı
+
+
+````markdown
+file1.txt - 3 satır / 120 karakter
+file2.txt - 10 satır / 987 karakter
+file3.txt - 6 satır / 266 karakter
+Toplam: 19 satır / 1373 karakter
+````
+
+
+
+
+## Notlar
+
+- Commit mesajları açık ve anlamlı tutulmuştur.  
+- Pull request ve merge süreçleri uygulanmıştır.  
+- Kodda açıklayıcı yorum satırları bulunmaktadır.
+
+
 
 
 
