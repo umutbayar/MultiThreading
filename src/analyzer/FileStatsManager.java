@@ -20,6 +20,8 @@ public class FileStatsManager {
 		return statsMap.keySet();
 	}
 
+	 System.out.println(fileName + " - " + stats.getLineCount() + " satır / " + stats.getCharCount() + " karakter");
+
 	public FileStats getStats(String fileName) {
 		return statsMap.get(fileName);
 	}
@@ -36,6 +38,9 @@ public class FileStatsManager {
 			totalChars += stats.getCharCount();
 		}
 		System.out.println("\nToplam: " + totalLines + " satır / " + totalChars + " karakter");
+
+	    System.out.println("\nToplam: " + totalLines + " satır / " + totalChars + " karakter");
+
 	}
 
 	public Map<String, FileStats> getStatsMap() {

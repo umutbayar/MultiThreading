@@ -1,0 +1,4 @@
+Merhaba dünya!  
+Bu birden fazla satır içeren örnek bir metindir.  
+Python ile bu dosyaları okuyabilir veya yazabilirsiniz.
+Çünkü neden öğrenmesin.
