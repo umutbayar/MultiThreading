@@ -20,14 +20,12 @@ public class FileStatsManager {
 	        String fileName = entry.getKey();
 	        FileStats stats = entry.getValue();
 
-	       
 	        System.out.println(fileName + " - " + stats.getLineCount() + " satır / " + stats.getCharCount() + " karakter");
 
 	        totalLines += stats.getLineCount();
 	        totalChars += stats.getCharCount();
 	    }
 
-	  
 	    System.out.println("\nToplam: " + totalLines + " satır / " + totalChars + " karakter");
 	}
 
