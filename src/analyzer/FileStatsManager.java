@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class FileStatsManager {
-
+	
 	private final ConcurrentHashMap<String, FileStats> statsMap;
 
 	public FileStatsManager(ConcurrentHashMap<String, FileStats> statsMap) {
@@ -19,8 +19,6 @@ public class FileStatsManager {
 	public Set<String> getAllFileNames() {
 		return statsMap.keySet();
 	}
-
-	 System.out.println(fileName + " - " + stats.getLineCount() + " satır / " + stats.getCharCount() + " karakter");
 
 	public FileStats getStats(String fileName) {
 		return statsMap.get(fileName);
@@ -37,10 +35,9 @@ public class FileStatsManager {
 			totalLines += stats.getLineCount();
 			totalChars += stats.getCharCount();
 		}
+		
 		System.out.println("\nToplam: " + totalLines + " satır / " + totalChars + " karakter");
-
-	    System.out.println("\nToplam: " + totalLines + " satır / " + totalChars + " karakter");
-
+		
 	}
 
 	public Map<String, FileStats> getStatsMap() {
