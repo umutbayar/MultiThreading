@@ -1,60 +1,67 @@
-Projenin Amacı
-Java ile multithreading konusunu uygulamalı göstermek. Proje, input klasöründeki .txt dosyalarını okuyarak her dosya için ayrı threadler oluşturan ve sonuçları output dizinine .zip formatında kaydeden bir uygulamadır.
+# 🧵 Java Multithread Dosya Analizi ve Arşivleme Projesi
 
-📂 Klasör Yapısı
-src/: Java kaynak kodları
-input/: Örnek 3 adet .txt dosyası
-output/: Oluşan .zip dosyası
-.gitignore: Gereksiz dosyaları dışarıda tutar (ör. /target, .class, .idea/)
+Bu proje, Java'da çoklu iş parçacığı (multithreading) kullanımını uygulamalı olarak göstermek amacıyla geliştirilmiştir.  
+Proje kapsamında, `input/` klasöründeki `.txt` dosyaları ayrı iş parçacıklarıyla analiz edilmekte ve ardından bu dosyalar `.zip` formatında `output/` klasörüne kaydedilmektedir.
 
-🛠️ Çalıştırma
-input/ klasörüne .txt dosyalarını ekleyin.
-Projeyi derleyin ve çalıştırın:
+---
 
-bash
-Kopyala
-Düzenle
-javac -d bin src/*.java
-java -cp bin Main
-Çıktılar output/ dizininde result.zip olarak oluşur.
+## 🎯 Projenin Amacı
 
-👨‍💻 Ekip Üyeleri ve Görev Dağılımı
+- Java'da multithreading mantığını gerçek bir senaryo ile pekiştirmek
+- Thread yönetimi, join() kullanımı ve thread-safe veri yapılarının uygulanmasını sağlamak
+- Dosya sistemi ile çalışma ve arşivleme işlemlerini öğrenmek
+- Ekip çalışması ile Git versiyon kontrolü pratiği kazanmak
 
-ŞEVVAL: RAPORLAMA Code Review
+---
 
-BAYRAM:THREAD YÖNETİM 
-FileAnalyzer.java, FileAnalysisTask.java
-- input klasörünü tarayan sınıfı yazar
-- Her dosya için bir thread oluşturan yapıyı kurar
-- Thread başlatma ve join() işlemlerini tasarlar
- 
-FURKAN:ARŞİVLEME SORUMLUSU
-Arşivleme Sorumlusu	ArchiveTask.java	
-- Tüm analizlerin tamamlanmasını bekleyen thread’i yazar
-- Dosyaları .zip arşivine alan kodu geliştirir
-- Hata kontrolü ve konsol bilgilendirme mesajları ekler
- 
-UMUT :Main Akış + Utils + Zaman Ölçümü	Main.java, Utils.java	- Programın giriş noktası (main metodu)
-- Aşamaların sürelerini System.nanoTime() ile ölçer
-- Program akışını düzenler ve kontrol noktaları koyar
- 
-HAKAN:Veri Modelleme ve Sonuç Yapısı
-FileStats.java, ConcurrentHashMap	
-- Her dosya için sonuçların tutulduğu sınıfı (FileStats) oluşturur
-- Thread-safe veri yapısını (ConcurrentHashMap) oluşturur
-- Sonuçların ekrana formatlı yazılmasını sağlar
+## 👥 Ekip Üyeleri ve Görev Dağılımı
 
-📦 Örnek Çıktı
-yaml
-Kopyala
-Düzenle
-file1.txt - 3 satır / 120 karakter
-file2.txt - 10 satır / 987 karakter
-file3.txt - 6 satır / 266 karakter
-Toplam: 19 satır / 1373 karakter
-📝 Notlar
-Commit mesajları açık ve anlamlı tutulmuştur.
+| Üye     | Görev                   | Açıklama                                                                                 |
+|---------|--------------------------|------------------------------------------------------------------------------------------|
+| Şevval  | Raporlama & Code Review | Belgeler, raporlar, kod inceleme, class diagram ve akış şeması                           |
+| Bayram  | Thread Yönetimi         | `FileAnalyzer.java`, `FileAnalysisTask.java` <br>• input klasörünü tarar <br>• Thread oluşturur ve join() işlemleri |
+| Furkan  | Arşivleme Sorumlusu     | `ArchiveTask.java` <br>• Tüm analizler tamamlandığında zip işlemini gerçekleştirir <br>• Konsol bilgilendirmeleri |
+| Umut    | Main Akış & Utils       | `Main.java`, `Utils.java` <br>• Programın giriş noktası <br>• Süre ölçümü <br>• Akışı ve zamanlamaları kontrol eder |
+| Hakan   | Veri Modelleme          | `FileStats.java` <br>• Sonuçların tutulduğu POJO <br>• Thread-safe `ConcurrentHashMap` ile analiz verilerini saklar |
 
-Pull request ve merge süreçleri uygulanmıştır.
+---
 
-Kodda açıklayıcı yorum satırları bulunmaktadır.
+
+## 🧩 Kullanılan Teknolojiler
+
+- Java 8+ (JDK 21 önerilir)
+- Thread, Runnable, join()
+- java.util.concurrent.ConcurrentHashMap
+- java.util.zip.ZipOutputStream
+- System.nanoTime() ile zaman ölçümü
+- Git & GitHub
+
+---
+
+
+
+## ⚙️ Proje Yapısı
+
+```bash
+📁 src/
+   ├── Main.java
+   ├── FileAnalyzer.java
+   ├── FileAnalysisTask.java
+   ├── ArchiveTask.java
+   ├── FileStats.java
+   └── Utils.java
+
+📁 input/
+   ├── file1.txt
+   ├── file2.txt
+   └── ...
+
+📁 output/
+   └── archived-files.zip
+
+📄 README.md
+📄 .gitignore
+
+
+
+
