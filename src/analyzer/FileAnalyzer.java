@@ -3,6 +3,9 @@ package analyzer;
 import java.io.File;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class FileAnalyzer {
 
@@ -23,21 +26,17 @@ public class FileAnalyzer {
             return;
         }
 
-        List<Thread> threadList = new ArrayList<>();
+        ExecutorService executor = Executors.newFixedThreadPool(10);
 
         for (File file : txtFiles) {
-            Thread thread = new Thread(new FileAnalysisTask(file, resultMap));
-            threadList.add(thread);
-            thread.start();
+            executor.submit(new FileAnalysisTask(file, resultMap));
         }
 
-        // Tüm threadlerin bitmesini bekle (join)
-        for (Thread t : threadList) {
-            try {
-                t.join();
-            } catch (InterruptedException e) {
-                System.out.println("Bir thread beklenirken hata oluştu: " + e.getMessage());
-            }
+        executor.shutdown();
+        try {
+            executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+        } catch (InterruptedException e) {
+            System.out.println("Bir thread beklenirken hata oluştu: " + e.getMessage());
         }
 
         printResults();
