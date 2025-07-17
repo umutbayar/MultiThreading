@@ -1,0 +1,12 @@
+Merhaba dünya!  
+Bu birden fazla satır içeren örnek bir metindir.  
+Python ile bu dosyaları okuyabilir veya yazabilirsiniz.  
+Veri analizi için hazırlık yapmak önemlidir.  
+Makine öğrenmesi projeleri büyük veri gerektirir.  
+Yapay zeka günlük yaşamda yaygınlaşıyor.  
+Programlama dilleri arasında Python popülerdir.  
+Herkes kod yazmayı öğrenebilir.  
+Çünkü neden öğrenmesin.Merhaba dünya!  
+Bu birden fazla satır içeren örnek bir metindir.  
+Python ile bu dosyaları okuyabilir veya yazabilirsiniz.  
+Veri analizi için hazırlık yapmak önemlidir.  

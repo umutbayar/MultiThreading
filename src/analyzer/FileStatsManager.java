@@ -44,5 +44,4 @@ public class FileStatsManager {
 	public Map<String, FileStats> getStatsMap() {
 	    return statsMap;
 	}
-//test
 }
