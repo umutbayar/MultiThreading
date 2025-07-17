@@ -10,10 +10,12 @@ public class FileStats {
 		this.charCount = charCount;
 	}
 
+	//Satır sayısını döndürür.
 	public int getLineCount() {
 		return lineCount;
 	}
 
+	//Karakter sayısını döndürür.
 	public int getCharCount() {
 		return charCount;
 	}
