@@ -1,6 +1,7 @@
 package analyzer;
 
 public class FileStats {
+	
 	private int lineCount;
 	private int charCount;
 
@@ -16,4 +17,5 @@ public class FileStats {
 	public int getCharCount() {
 		return charCount;
 	}
+	
 }
